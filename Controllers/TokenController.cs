@@ -39,9 +39,9 @@ namespace AuthenticationSample.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
+        [HttpPost]
         [Authorize]
-        public IActionResult Get() => Ok(CreateToken(_userManager.GetUserName(User)));
+        public IActionResult Post() => Ok(CreateToken(_userManager.GetUserName(User)));
 
         private dynamic CreateToken(string userName)
         {
